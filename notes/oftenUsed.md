@@ -19,30 +19,29 @@ gobuster dir -u IP -w /usr/share/wordlists/dirb/common.txt -e
   -v                 \  # verbose; show more info
 
 
-Have a permanant shell: 
+Stable shell: 
 
-# In dumb shell on target:
-python3 -c 'import pty; pty.spawn("/bin/bash")'  # get a PTY
+python -c 'import pty; pty.spawn("/bin/bash")'
+OR
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/tmp
+export TERM=xterm-256color
+alias ll='ls -lsaht --color=auto'
+Ctrl + Z [Background Process]
 
-# On your Kali:
-Ctrl-Z
-stty raw -echo
-fg
-reset
-export TERM=xterm
-
+stty raw -echo ; fg ; reset
+stty columns 200 rows 200
 
 Web application : 
 Tools: 
 wfuzz
 nikto 
+if wordpress : wpscan, take a look at upload and at the plugin 
 
-if wordpress : wpscan 
 
 During Exploit: 
 
-wow shell: 
-python3 -c 'import pty;pty.spawn("/bin/bash")'
+
  
 
 
