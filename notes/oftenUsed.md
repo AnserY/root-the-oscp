@@ -19,10 +19,31 @@ gobuster dir -u IP -w /usr/share/wordlists/dirb/common.txt -e
   -v                 \  # verbose; show more info
 
 
+Have a permanant shell: 
+
+# In dumb shell on target:
+python3 -c 'import pty; pty.spawn("/bin/bash")'  # get a PTY
+
+# On your Kali:
+Ctrl-Z
+stty raw -echo
+fg
+reset
+export TERM=xterm
+
+
+Web application : 
+Tools: 
+wfuzz
+nikto 
+
+if wordpress : wpscan 
 
 During Exploit: 
 
 wow shell: 
 python3 -c 'import pty;pty.spawn("/bin/bash")'
  
+
+
 
