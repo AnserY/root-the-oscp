@@ -1,6 +1,8 @@
 My path to manually PE: 
 
-CApabilities: 
+**capabilities** are a fine‑grained way to give a process some—but not all—of the privileges normally reserved for root. Instead of “all or nothing” (setuid root), you can grant just the permissions you need.
+
+Capabilities: 
 which gcc
 which cc
 which python
