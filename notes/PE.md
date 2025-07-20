@@ -134,7 +134,7 @@ su <user id matching target machine's user-level privilege.>
 
 [On Target Machine]
 user@host$ ./suid
-#
+
 
 Where can I live on this machine? Where can I read, write and execute files?
 /var/tmp/
