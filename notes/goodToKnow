@@ -63,7 +63,34 @@ ssh-rsa AAAAB3... user@machine
 
 ----------------------------------------------------------
 
-#
+# What's Samba 
+Samba is the free, open‑source suite that implements the SMB/CIFS protocol on Unix‑like systems. In essence, it lets Linux (and other non‑Windows) machines “speak” the same file‑and‑printer‑sharing language as Window. 
+
+## Services & Files  
+- **Daemons**  
+  - `smbd` – file/printer sharing  
+  - `nmbd` – NetBIOS name service  
+  - `winbindd` – AD user/group mapping  
+- **Config**: `/etc/samba/smb.conf`  
+- **Logs**: `/var/log/samba/`
+
+
+## List shares: 
+```bash
+smbclient -L //<host> -U <user> 
+```
+
+## Mount shares:
+```bash 
+mount -t cifs //server/share /mnt \
+  -o username=dora,password=Secret123
+```
+
+-------------------------------------------------------------------
+
+
+
+
 
 
 

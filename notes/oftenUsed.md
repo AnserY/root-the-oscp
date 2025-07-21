@@ -242,4 +242,26 @@ GIF89a1
 netdiscover -r 0.0.0.0/24
 ```
 
-## 7. 
+## 7. SMB protocol 
+
+### 7.1 Look for shares 
+```bash
+nmap -p 139,445 --script smb-os-discovery,smb-enum-shares $IP
+```
+or
+```bash
+smbclient -L //$IP
+```
+
+### 7.2 Looking for null session 
+```bash
+smbclient //$IP/IPC$ -N
+```
+or
+```bash
+enum4linux -a $IP
+```
+### 7.3 General info 
+```bash
+enum4linux $IP
+```

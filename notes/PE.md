@@ -2,7 +2,7 @@ My path to manually PE:
 
 **capabilities** are a fine‑grained way to give a process some—but not all—of the privileges normally reserved for root. Instead of “all or nothing” (setuid root), you can grant just the permissions you need.
 
-Capabilities: 
+## Capabilities: 
 which gcc
 which cc
 which python
@@ -15,59 +15,59 @@ which ncat
 which nc.traditional
 which socat
 
-Compilation? (Very Back Burner)
+## Compilation? (Very Back Burner)
 file /bin/bash
 uname -a
 cat /etc/*-release
 cat /etc/issue
 
 
-What Arch?
+## What Arch?
 file /bin/bash
 
-Kernel?
+## Kernel?
 uname -a
 
-Issue/Release?
+## Issue/Release?
 cat /etc/issue
 cat /etc/*-release
 
-Are we a real user?
+## Are we a real user?
 sudo -l
 ls -lsaht /etc/sudoers
 
-Are any users a member of exotic groups?
+## Are any users a member of exotic groups?
 groups <user>
 
 
-Check out your shell's environment variables...
+## Check out your shell's environment variables...
 env
 https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/
 
-Users?
+## Users?
 cd /home/
 ls -lsaht
 
-Web Configs containing credentials?
+## Web Configs containing credentials?
 cd /var/www/html/
 ls -lsaht
 
-SUID Binaries?
+## SUID Binaries?
 find / -perm -u=s -type f 2>/dev/null
 
-GUID Binaries?
+## GUID Binaries?
 find / -perm -g=s -type f 2>/dev/null
 
-SUID/GUID/SUDO Escalation:
+## SUID/GUID/SUDO Escalation:
 https://gtfobins.github.io/
 
-Binary/Languages with "Effective Permitted" or "Empty Capability" (ep):
+## Binary/Languages with "Effective Permitted" or "Empty Capability" (ep):
 https://www.insecure.ws/linux/getcap_setcap.html#getcap-setcap-and-file-capabilities
 Get Granted/Implicit (Required by a Real User) Capabilities of all files recursively throughout the system and pipe all error messages to /dev/null.
 getcap -r / 2>/dev/null
 
 
-We need to start monitoring the system if possible while performing our enumeration...
+## We need to start monitoring the system if possible while performing our enumeration...
 https://github.com/DominicBreuker/pspy/blob/master/README.md
 cd /var/tmp/
 File Transfer --> pspy32
@@ -75,21 +75,21 @@ File Transfer --> pspy64
 chmod 755 pspy32 pspy64
 ./pspy<32/64>
 
-What does the local network look like?
+## What does the local network look like?
 netstat -antup
 netstat -tunlp
 
-Is anything vulnerable running as root?
+## Is anything vulnerable running as root?
 ps aux | grep -i 'root' --color=auto
 
-MYSQL Credentials? Root Unauthorized Access?
+## MYSQL Credentials? Root Unauthorized Access?
 mysql -uroot -p
 Enter Password:
 root : root
 root : toor
 root :
 
-A quick look at etc to see if any user-level people did special things:
+## A quick look at etc to see if any user-level people did special things:
 cd /etc/
 ls -lsaht
 Anything other than root here?
@@ -99,27 +99,27 @@ Anything other than root here?
 • If we have root priv information disclosure - are there any .secret in /etc/ files?
 → ls -lsaht |grep -i ‘.secret’ --color=aut
 
-SSH Keys I can use perhaps for even further compromise?
+## SSH Keys I can use perhaps for even further compromise?
 ls -lsaR /home/
 
-Quick look in:
+## Quick look in:
 ls -lsaht /var/lib/
 ls -lsaht /var/db/
 
-Quick look in:
+## Quick look in:
 ls -lsaht /opt/
 ls -lsaht /tmp/
 ls -lsaht /var/tmp/
 ls -lsaht /dev/shm/
 
-File Transfer Capability? What can I use to transfer files?
+## File Transfer Capability? What can I use to transfer files?
 which wget
 which curl
 which nc
 which fetch (BSD)
 ls -lsaht /bin/ |grep -i 'ftp' --color=auto
 
-NFS? Can we exploit weak NFS Permissions?
+## NFS? Can we exploit weak NFS Permissions?
 cat /etc/exports
 no_root_squash?
 https://recipeforroot.com/attacking-nfs-shares/
