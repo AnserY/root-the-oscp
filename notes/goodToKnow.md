@@ -61,10 +61,15 @@ ssh-rsa AAAAB3... user@machine
 - `AAAAB3...` → Base64-encoded public key
 - `user@machine` → Optional comment
 
-----------------------------------------------------------
+-------------------------------------------------------------------
+# What's SSH tunneling 
 
-# What's Samba 
-Samba is the free, open‑source suite that implements the SMB/CIFS protocol on Unix‑like systems. In essence, it lets Linux (and other non‑Windows) machines “speak” the same file‑and‑printer‑sharing language as Window. 
+
+
+
+-----------------------------------------------------------------
+# Samba 
+Samba is a Linux/Unix implementation of the SMB/CIFS protocol that lets non‑Windows machines act as file‐ and print‐servers (or join Windows domains). At a high level:
 
 ## Services & Files  
 - **Daemons**  
@@ -85,12 +90,3 @@ smbclient -L //<host> -U <user>
 mount -t cifs //server/share /mnt \
   -o username=dora,password=Secret123
 ```
-
--------------------------------------------------------------------
-
-
-# What's SSH tunneling 
-
-
-
-
