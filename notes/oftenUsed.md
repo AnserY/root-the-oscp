@@ -266,15 +266,26 @@ enum4linux -a $IP
 enum4linux $IP
 ```
 
-### FTP protocol 
+## FTP protocol 
 ```bash
 ftp $IP
 ```
 
-### Hydra SSH (to be used when you have a user name)
+## Hydra SSH (to be used when you have a user name)
 ```bash
 hydra -l users.txt \
       -P /usr/share/wordlists/rockyou.txt \
       -t 4 -f -V \
       ssh://$IP
+```
+
+## SMPT (Simple Mail Transfer Protocol) 
+### Banner & Version*
+   ```bash
+   nc TARGET 25
+   HELO me
+   ```
+## Check if the exploit work with tcpdump 
+```bash
+sudo tcpdump -i tun0 -n -vv icmp
 ```
