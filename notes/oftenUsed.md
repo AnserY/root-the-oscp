@@ -242,7 +242,7 @@ GIF89a1
 netdiscover -r 0.0.0.0/24
 ```
 
-## 7. SMB protocol 
+## 7. SMB protocol (file sharing between different operating systems)
 
 ### 7.1 Look for shares 
 ```bash
@@ -264,4 +264,9 @@ enum4linux -a $IP
 ### 7.3 General info 
 ```bash
 enum4linux $IP
+```
+
+### FTP protocol 
+```bash
+ftp $IP
 ```
