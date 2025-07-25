@@ -270,3 +270,11 @@ enum4linux $IP
 ```bash
 ftp $IP
 ```
+
+### Hydra SSH (to be used when you have a user name)
+```bash
+hydra -l users.txt \
+      -P /usr/share/wordlists/rockyou.txt \
+      -t 4 -f -V \
+      ssh://$IP
+```

