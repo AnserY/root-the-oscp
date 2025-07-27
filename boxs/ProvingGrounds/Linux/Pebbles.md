@@ -14,7 +14,7 @@
 
 ---
 
-## 🔍 Service Enumeration (`nmap -sC -sV`)
+## Service Enumeration (`nmap -sC -sV`)
 | Port    | State | Service  | Version                             |
 | ------- | ----- | -------- | ----------------------------------- |
 | **21**  | open  | ftp      | vsftpd 3.0.3                        |
@@ -25,7 +25,7 @@
 
 ---
 
-## 🚩 Initial Findings
+##  Initial Findings
 - **FTP (21):** anonymous disabled, no user list  
 - **SSH (22):** no valid creds yet  
 - **HTTP (80):** ZoneMinder web console; source code not directly exposed  
@@ -34,7 +34,7 @@
 
 ---
 
-## 🐘 Exploitation: SQL Injection in ZoneMinder (CVE‑2020‑7247)
+##  Exploitation: SQL Injection in ZoneMinder (CVE‑2020‑7247)
 
 1. **Vuln discovered** in `zm/index.php?view=request…&limit=…`  
 2. **Time‑based payload** to confirm injection:

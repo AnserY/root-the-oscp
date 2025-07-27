@@ -121,3 +121,15 @@ mount -t cifs //server/share /mnt \
 3. **Trigger LFI to include the poisoned log**
 http://TARGET/image.php?img=../../../../../../var/log/apache2/access.log%00&cmd=id
 
+
+----------------------------------
+# The sudoers file 
+
+Configuration file that defines who (which users or groups) is allowed to run what commands as which users (usually root), and how (with or without password). It’s parsed by the sudo command and controls all of sudo’s behavior.
+User specifications
+## Grant specific users or groups the ability to run commands as other users:
+EXP:
+user    host = (run-as) options: commands
+alice     ALL  = (ALL)       ALL
+bob       web  = (root)      NOPASSWD: /usr/bin/systemctl restart apache2
+%admins    ALL = (ALL:ALL)   ALL
