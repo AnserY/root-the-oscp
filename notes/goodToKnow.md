@@ -133,3 +133,13 @@ user    host = (run-as) options: commands
 alice     ALL  = (ALL)       ALL
 bob       web  = (root)      NOPASSWD: /usr/bin/systemctl restart apache2
 %admins    ALL = (ALL:ALL)   ALL
+
+----------------------------------
+# Redis Database 
+Redis is an open‑source, in‑memory data store often used as a cache or simple database. At its core it holds keys and values (think of it like a really fast hash table).
+
+## Key Concept
+- Data store: You connect with redis-cli and can run commands like SET key value and GET key.
+- Persistence: Even though it keeps data in memory, Redis can “dump” its state to disk (an RDB file) or append every write to a log (AOF).
+- Replication: You can configure one Redis server to replicate another. The “slave” logs every write the “master” does.
+
