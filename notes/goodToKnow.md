@@ -143,3 +143,19 @@ Redis is an open‑source, in‑memory data store often used as a cache or simpl
 - Persistence: Even though it keeps data in memory, Redis can “dump” its state to disk (an RDB file) or append every write to a log (AOF).
 - Replication: You can configure one Redis server to replicate another. The “slave” logs every write the “master” does.
 
+--------------------------------------------------
+# DNS Tunneling 
+## Attacker‐controlled DNS domain
+   You register a domain you control (e.g. evil.example.com) and point its NS records to a DNS server you operate.
+
+## Client setup
+    On the restricted network, you run a client tool (e.g. iodine, dnscat2) that:
+    Intercepts traffic destined for some “tunneled” service (e.g. local port 8080).
+    Encodes that traffic in DNS queries to subdomains of your domain:
+    <base32-or-base64-payload>.evil.example.com
+
+## DNS server (server side)
+Your authoritative DNS server receives these queries. A custom backend decodes the embedded payload from the subdomain, processes it (e.g. forwards to a web proxy or SSH server), then encodes the response back into DNS record data.
+
+## Round‑trip
+The client decodes the DNS response data to reconstruct the tunneled protocol’s response, and presents it to the local application.
