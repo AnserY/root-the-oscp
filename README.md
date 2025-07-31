@@ -2,6 +2,7 @@
 This is a comprehensive repository of my notes, tools, and write‑ups created during my journey to earn the Offensive Security Certified Professional (OSCP) certification. It also includes CTF and challenge solutions (Box), privilege escalation checklists, and my overall penetration testing methodology.
 
 # Repository Structure
+```
 root-the-oscp/
 ├── boxs/                # Proving Grounds, TryHackme and HTB boxs
 │   ├── Bratarina.md
@@ -14,7 +15,7 @@ root-the-oscp/
 │   ├── oftenUsed.md      # Common commands & tools
 │   └── goodToKnow.md     # Tips and best practices
 └── README.md             # Project overview (this file)
-
+```
 Box Roadmap: https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?pli=1&gid=487240997#gid=487240997
 
 # To Remember: Exam Format
