@@ -321,3 +321,8 @@ hydra -L valid_users.txt -P passwords.txt pop3://$IP
 ```bash 
 cewl $URL -w cewl.list
 ```
+
+# dump git rep when you have the .git 
+```bash
+git-dumper http://ip/.git ~/dir
+```
