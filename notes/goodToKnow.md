@@ -91,7 +91,8 @@ mount -t cifs //server/share /mnt \
   -o username=dora,password=Secret123
 ```
 
---------------------------------------------------------------
+------ 
+
 
 # LFI vs RFI
 ## LFI
