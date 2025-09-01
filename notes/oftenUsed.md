@@ -344,3 +344,8 @@ client server tool
 ```bash
 hashcat -m 400 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt
 ```
+
+# john the riper 
+```bash
+john --format=phpass --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
