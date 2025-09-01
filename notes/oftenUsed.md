@@ -274,7 +274,10 @@ enum4linux $IP
 ```bash
 ftp $IP
 ```
-
+or 
+```bash
+ftp $USER@$IP
+```
 ## Hydra SSH (to be used when you have a user name)
 ```bash
 hydra -l users.txt \
