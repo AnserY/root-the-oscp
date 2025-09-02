@@ -300,7 +300,7 @@ F=Username and password do not match or you do not have an account yet."
    nc TARGET 25
    HELO me
    ```
-## smtp enumerate user
+### smtp enumerate user
 ```bash
 sudo perl smtp-user-enum.pl -M VRFY -U /opt/seclists/Usernames/Names/names.txt -t 192.168.211.137 
 ```
