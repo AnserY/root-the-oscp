@@ -28,7 +28,10 @@
   ```bash
   nmap --script smb-enum-shares <TARGET>
   ```
-
+- **More information**
+  ```bash
+  nmap -sC -sV -A $IP -p $PORTS
+  ```
 ### 1.2 Gobuster
 - **Directory brute‑force**  
   ```bash
