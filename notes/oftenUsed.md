@@ -355,3 +355,16 @@ hashcat -m 400 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt
 ```bash
 john --format=phpass --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
+
+# ssh2john 
+crack the password of ssh key 
+### step 1 create the hash
+```bash 
+python3 /usr/share/john/ssh2john.py id_rsa > id_rsa.hash
+```
+### step 2 crack the hash 
+john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash
+### see progress / status
+john --status
+### show found passphrase(s)
+john --show id_rsa.hash
