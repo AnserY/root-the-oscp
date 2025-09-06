@@ -83,7 +83,7 @@ netstat -tunlp
 ps aux | grep -i 'root' --color=auto
 
 ## MYSQL Credentials? Root Unauthorized Access?
-mysql -uroot -p
+mysql -u root -p
 Enter Password:
 root : root
 root : toor
@@ -172,7 +172,7 @@ cat /etc/crontab
 ls /etc/cron.*
 
 Bob is a user on this machine. What is every single file he has ever created?
-find / -user miguel 2>/dev/null
+find / -user bob 2>/dev/null
 
 Any mail? mbox in User $HOME directory?
 cd /var/mail/
