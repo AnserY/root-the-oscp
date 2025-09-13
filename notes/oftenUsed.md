@@ -163,7 +163,10 @@ _See Nikto docs for other evasion modalities._
     -z file,/opt/SecLists/Discovery/Web-Content/raft-large-words.txt \
     --hc 404 "$URL"
   ```
-
+- **DNS subdomain** 
+```bash 
+  ffuf -w /opt/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -u $URL -H "Host: FUZZ.$DOMAIN" --fw 4 --fs 652
+```
 ### 3.4 Commix
 ```bash
 commix \
