@@ -165,7 +165,7 @@ _See Nikto docs for other evasion modalities._
   ```
 - **DNS subdomain** 
 ```bash 
-  ffuf -w /opt/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -u $URL -H "Host: FUZZ.$DOMAIN" --fw 4 --fs 652
+  ffuf -w /opt/SecLists/Discovery/DNS/n0kovo_subdomains_huge.txt -u $URL -H "Host: FUZZ.$DOMAIN" --fw $X
 ```
 ### 3.4 Commix
 ```bash
